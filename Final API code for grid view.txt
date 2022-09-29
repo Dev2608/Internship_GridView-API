@@ -1,0 +1,44 @@
+// complete API with all 4 attributes
+        // Data[0] = emp_id (OrderBy Parameter) Data[1] = 20(Number of rows on single page) and Data[2] = 2(page number) Data[3] = ASEC/DESC
+        // Data[4] = nameToBeSearched in the table
+        // in offset, the result is less then the offset number then no data will be displayed.
+        [Route("api/selectData/selectEmployeeComplete")]
+        [HttpGet]
+        public IHttpActionResult selectEmployeeComplete([FromBody] String[] Data)
+        {
+            var temp1 = int.Parse(Data[1]);
+            var temp2 = int.Parse(Data[2]);
+
+            var temp = temp1 * temp2;
+            temp = temp - temp1;
+            var total = temp.ToString();
+
+            try
+            {
+                ob1.connect();
+                DataSet ds = ob1.selectEmployee("SELECT * from employee where emp_name LIKE '%"+ Data[4] +"%' ORDER BY " + Data[0] +" "+ Data[3] + " OFFSET " + total + " ROWS FETCH NEXT " + Data[1] + " ROWS ONLY");
+
+                var list = ds.Tables[0].AsEnumerable().Select(dataRow => new employee
+                {
+                    emp_id = dataRow.Field<String>("emp_id"),
+                    emp_name = dataRow.Field<String>("emp_name"),
+                    emp_email = dataRow.Field<String>("emp_email")
+                });
+
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return (IHttpActionResult)ex;
+            }
+        }
+
+SELECT * from employee where emp_name LIKE '%dev%' ORDER BY emp_id DESC OFFSET 20 ROWS FETCH NEXT 20 ROWS ONLY
+
+
+SELECT * from employee where emp_name LIKE '%"+ Data[4] +"%' ORDER BY " + Data[0] +" "+ Data[3] + " OFFSET " + total + " ROWS FETCH NEXT " + Data[1] + " ROWS ONLY
+
+
+
+DataSet ds = ob1.selectEmployee("spGetEmployee",Data[4],Data[0],Data[3],total,Data[1]);
+

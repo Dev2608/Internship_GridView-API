@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGridView", "ApiGridView.csproj", "{D1C2BE98-95F3-4844-B063-D4EF640814BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "connection", "..\connection\connection.csproj", "{4AE7D17D-B6BD-4531-88A0-64590A00EB58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1C2BE98-95F3-4844-B063-D4EF640814BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C2BE98-95F3-4844-B063-D4EF640814BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C2BE98-95F3-4844-B063-D4EF640814BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C2BE98-95F3-4844-B063-D4EF640814BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE7D17D-B6BD-4531-88A0-64590A00EB58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE7D17D-B6BD-4531-88A0-64590A00EB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE7D17D-B6BD-4531-88A0-64590A00EB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE7D17D-B6BD-4531-88A0-64590A00EB58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2701218-8C2F-4083-B4B6-FB5C710D9A72}
+	EndGlobalSection
+EndGlobal
